@@ -8,7 +8,6 @@ import com.proyecto.restaurante.model.enums.EstadoReservacion;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import kotlin.uuid.Uuid;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
