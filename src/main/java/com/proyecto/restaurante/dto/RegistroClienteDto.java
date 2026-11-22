@@ -32,8 +32,6 @@ public class RegistroClienteDto {
     @Size(min = 10, max = 15, message = "El teléfono debe tener entre 10 y 15 dígitos")
     private String telefono;
 
-    @Min(value = 18, message = "Debes ser mayor de edad")
-
     @NotNull(message = "La fecha de nacimiento es obligatoria")
     @Past(message = "La fecha de nacimiento debe ser en el pasado")
     private LocalDate fechaNacimiento;

@@ -39,9 +39,6 @@ public class Usuario {
     @Column(nullable = false, length = 20)
     private String telefono;
 
-    @Column(nullable = false)
-    private Integer edad;
-
     @Column(nullable = true)
     private LocalDate fechadeNacimiento;
 
