@@ -9,6 +9,7 @@ import { MesasPage } from './pages/MesasPage';
 import { ComandasPage } from './pages/ComandasPage';
 import { KdsPage } from './pages/KdsPage';
 import { InventarioPage } from './pages/InventarioPage';
+import { AdminPage } from './pages/AdminPage';
 import { ProtectedRoute } from './components/ProtectedRoute';
 
 export function App() {
@@ -26,6 +27,7 @@ export function App() {
         <Route path="/comandas" element={<ProtectedRoute rolesPermitidos={['MESERO']}><ComandasPage /></ProtectedRoute>} />
         <Route path="/kds" element={<ProtectedRoute rolesPermitidos={['CHEF']}><KdsPage /></ProtectedRoute>} />
         <Route path="/inventario" element={<ProtectedRoute rolesPermitidos={['CHEF']}><InventarioPage /></ProtectedRoute>} />
+        <Route path="/admin" element={<ProtectedRoute rolesPermitidos={['ADMIN']}><AdminPage /></ProtectedRoute>} />
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
