@@ -1,16 +1,21 @@
 package com.proyecto.restaurante.controller;
 
+import java.util.Map;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.proyecto.restaurante.dto.LoginRequestDto;
 import com.proyecto.restaurante.dto.LoginResponseDto;
 import com.proyecto.restaurante.dto.RegistroClienteDto;
+import com.proyecto.restaurante.dto.RestablecerPasswordDto;
+import com.proyecto.restaurante.dto.ValidarCodigoDto;
 import com.proyecto.restaurante.model.Usuario;
 import com.proyecto.restaurante.service.AuthService;
 
@@ -43,4 +48,22 @@ public class AuthRestController {
         return ResponseEntity.ok("Sesión cerrada correctamente.");
     }
 
+    @PostMapping("/recuperar")
+    public ResponseEntity<String> solicitarRecuperacion(@RequestParam String email) {
+        authService.solicitarCodigoRecuperacion(email);
+        return ResponseEntity.ok("Si el correo está registrado, recibirás un código de recuperación.");
+    }
+
+    @PostMapping("/validar-codigo")
+    public ResponseEntity<Map> confirmarRecuperacion(@Valid @RequestBody ValidarCodigoDto dto) {
+        String resetToken = authService.confirmarRecuperacion(dto.getCorreo(), dto.getCodigo());
+        return ResponseEntity.ok(Map.of("resetToken", resetToken));
+    }
+
+    @PostMapping("/restablecer-password")
+    public ResponseEntity<String> restablecerPassword(@Valid @RequestBody RestablecerPasswordDto dto) {
+        authService.restablecerPassword(dto.getResetToken(), dto.getNuevaPassword());
+        return ResponseEntity.ok("Contraseña actualizada correctamente.");
+    }
+    
 }
