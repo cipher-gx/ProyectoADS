@@ -1,5 +1,5 @@
 ﻿import api from './api';
-import type { AuthResponse, LoginRequest, RegistroRequest } from '../types/auth';
+import type { AuthResponse, LoginRequest, RegistroRequest } from '../types/auth.types';
 
 export const authService = {
   registro: async (data: RegistroRequest): Promise<AuthResponse> => {
