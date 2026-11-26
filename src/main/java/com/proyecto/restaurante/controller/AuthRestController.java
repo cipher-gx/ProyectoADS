@@ -55,7 +55,7 @@ public class AuthRestController {
     }
 
     @PostMapping("/validar-codigo")
-    public ResponseEntity<Map> confirmarRecuperacion(@Valid @RequestBody ValidarCodigoDto dto) {
+    public ResponseEntity<Map<String, String>> confirmarRecuperacion(@Valid @RequestBody ValidarCodigoDto dto) {
         String resetToken = authService.confirmarRecuperacion(dto.getCorreo(), dto.getCodigo());
         return ResponseEntity.ok(Map.of("resetToken", resetToken));
     }
