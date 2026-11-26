@@ -1,0 +1,77 @@
+﻿.inicio-layout {
+  min-height: 100vh;
+  background-color: #f1f5f9;
+}
+
+.inicio-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.inicio-header {
+  background-color: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+}
+
+.inicio-header h1 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.65rem;
+  color: #0f172a;
+}
+
+.inicio-header p {
+  margin: 0;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 4px solid #2563eb;
+}
+
+.dashboard-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #1e293b;
+  font-size: 1.15rem;
+}
+
+.dashboard-card p {
+  margin: 0 0 1.25rem 0;
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.btn-card {
+  display: inline-block;
+  text-align: center;
+  background-color: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-card:hover {
+  background-color: #1d4ed8;
+}

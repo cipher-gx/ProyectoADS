@@ -1,0 +1,151 @@
+﻿.cliente-layout {
+  min-height: 100vh;
+  background-color: #f1f5f9;
+}
+
+.cliente-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.cliente-header {
+  background-color: #ffffff;
+  padding: 1.35rem 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1.5rem;
+}
+
+.cliente-header h1 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.5rem;
+  color: #0f172a;
+}
+
+.cliente-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.pedidos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 1.25rem;
+}
+
+.pedido-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.35rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pedido-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.65rem;
+}
+
+.pedido-folio {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.badge-pedido {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}
+
+.estado-PENDIENTE_ACEPTACION { background-color: #fef3c7; color: #b45309; }
+.estado-EN_PREPARACION { background-color: #dbeafe; color: #1d4ed8; }
+.estado-EN_CAMINO { background-color: #e0e7ff; color: #4338ca; }
+.estado-ENTREGADO { background-color: #dcfce7; color: #15803d; }
+.estado-CANCELADO { background-color: #fee2e2; color: #b91c1c; }
+
+.res-workspace {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .res-workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+.res-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.res-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.res-form label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.3rem;
+}
+
+.res-form input,
+.res-form select,
+.res-form textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.anticipo-box {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 0.85rem;
+  font-size: 0.88rem;
+  color: #1e3a8a;
+}
+
+.btn-primario {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+
+.btn-cancelar-sm {
+  margin-top: 0.75rem;
+  background-color: #ef4444;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
