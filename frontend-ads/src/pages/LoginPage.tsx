@@ -13,7 +13,12 @@ export default function LoginPage() {
     e.preventDefault();
     setError('');
     try {
-      await authService.login({ correo, password });
+      const data: any = await authService.login({ correo, password });
+      if (data?.token) {
+        localStorage.setItem('token', data.token);
+      }
+      localStorage.setItem('rol', data?.rol || 'CLIENTE');
+      localStorage.setItem('nombre', data?.nombre || correo);
       navigate('/inicio');
     } catch (err: any) {
       setError(err.response?.data?.mensaje || 'Correo o contraseña incorrectos');

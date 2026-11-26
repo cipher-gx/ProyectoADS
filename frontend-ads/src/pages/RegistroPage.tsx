@@ -10,6 +10,7 @@ export default function RegistroPage() {
     password: '',
     telefono: '',
     fechaNacimiento: '',
+    direccionPrincipal: '',
   });
   const [error, setError] = useState('');
   const navigate = useNavigate();
@@ -91,6 +92,18 @@ export default function RegistroPage() {
               type="date"
               value={formData.fechaNacimiento}
               onChange={(e) => setFormData({ ...formData, fechaNacimiento: e.target.value })}
+              required
+            />
+          </div>
+
+          <div className="campo-grupo">
+            <label htmlFor="direccionPrincipal">Dirección principal (máx. 5 km de cobertura)</label>
+            <input
+              id="direccionPrincipal"
+              type="text"
+              placeholder="Calle, número, colonia, alcaldía"
+              value={formData.direccionPrincipal}
+              onChange={(e) => setFormData({ ...formData, direccionPrincipal: e.target.value })}
               required
             />
           </div>
