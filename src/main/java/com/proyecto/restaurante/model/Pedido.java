@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.proyecto.restaurante.model.enums.EstadoPedido;
 import com.proyecto.restaurante.model.enums.MetodoPago;
 import com.proyecto.restaurante.model.enums.TipoPedido;
@@ -36,22 +37,27 @@ public class Pedido {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cliente_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Usuario cliente;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "mesero_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Usuario mesero;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "chef_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Usuario chef;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "mesa_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Mesa mesa;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "direccion_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private DireccionCliente direccion;
 
     @Enumerated(EnumType.STRING)
@@ -114,7 +120,7 @@ public class Pedido {
     private Integer divisionesCuenta = 1;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "metodo_pago", length = 20, nullable = false)
+    @Column(name = "metodo_pago", length = 20, nullable = true)
     private MetodoPago metodoPago;
 
     @Column(name = "solicita_factura", nullable = false)

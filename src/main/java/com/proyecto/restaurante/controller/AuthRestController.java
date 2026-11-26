@@ -49,8 +49,8 @@ public class AuthRestController {
     }
 
     @PostMapping("/recuperar")
-    public ResponseEntity<String> solicitarRecuperacion(@RequestParam String email) {
-        authService.solicitarCodigoRecuperacion(email);
+    public ResponseEntity<String> solicitarRecuperacion(@RequestParam String correo) {
+        authService.solicitarCodigoRecuperacion(correo);
         return ResponseEntity.ok("Si el correo está registrado, recibirás un código de recuperación.");
     }
 

@@ -1,16 +1,8 @@
 package com.proyecto.restaurante.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class LoginResponseDto {
-    private String token;
-    private String nombre;
-    private String id;
-}
+public record LoginResponseDto(
+    String token,
+    String nombre,
+    String id,
+    String rol
+) {}

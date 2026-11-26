@@ -60,7 +60,12 @@ public class AuthService {
 
         String token = jwtService.generarToken(usuario);
 
-        return new LoginResponseDto(token, usuario.getNombre(), usuario.getId().toString());
+        return new LoginResponseDto(
+        token,
+        usuario.getNombre(),
+        usuario.getId().toString(),
+        usuario.getRol().name()
+        );
     }
 
     public void logout(Usuario usuario) {
